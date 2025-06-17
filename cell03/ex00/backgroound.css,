@@ -1,0 +1,23 @@
+body {
+  transition: background 0.4s;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 18px 36px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 8px;
+  background: #4f8cff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #2563c9;
+}

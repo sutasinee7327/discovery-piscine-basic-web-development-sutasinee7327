@@ -1,1 +1,87 @@
+body {
+  background: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
 
+.profile-card {
+  width: 320px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 28px 24px 24px 24px;
+  text-align: center;
+}
+
+.card-title {
+  margin-bottom: 18px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  border: none;
+  padding: 0;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.login {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 6px;
+  font-size: 1.1em;
+}
+
+.desc {
+  color: #888;
+  font-size: 1em;
+  margin-bottom: 12px;
+}
+
+.social-cell {
+  margin: 10px 0;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 6px;
+  vertical-align: middle;
+  filter: grayscale(1);
+  transition: filter 0.2s;
+}
+
+.social-icon:hover {
+  filter: none;
+}
+
+.button-cell {
+  padding-top: 16px;
+}
+
+.contact-btn {
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 36px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-btn:hover {
+  background: #2563c9;
+}

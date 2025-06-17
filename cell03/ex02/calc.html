@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It's over 9000 Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .calc-container {
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px #0002;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    input[type="text"] {
+      width: 60px;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 1em;
+    }
+    select {
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    input[type="submit"] {
+      padding: 6px 18px;
+      border-radius: 4px;
+      border: none;
+      background: #4f8cff;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    input[type="submit"]:hover {
+      background: #2563c9;
+    }
+  </style>
+</head>
+<body>
+  <form class="calc-container" id="calcForm" autocomplete="off">
+    <input type="text" id="left" placeholder="0">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="text" id="right" placeholder="0">
+    <input type="submit" value="Try me!">
+  </form>
+  <script>
+    function isPositiveInteger(value) {
+      return /^\d+$/.test(value);
+    }
+
+    function showAlert(msg) {
+      alert(msg);
+    }
+
+    document.getElementById('calcForm').onsubmit = function(e) {
+      e.preventDefault();
+      const left = document.getElementById('left').value.trim();
+      const right = document.getElementById('right').value.trim();
+      const op = document.getElementById('operator').value;
+
+      if (!isPositiveInteger(left) || !isPositiveInteger(right)) {
+        showAlert('Error :(');
+        return;
+      }
+
+      const a = parseInt(left, 10);
+      const b = parseInt(right, 10);
+
+      if ((op === '/' || op === '%') && b === 0) {
+        showAlert("It's over 9000!");
+        console.log("It's over 9000!");
+        return;
+      }
+
+      let result;
+      switch(op) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '*': result = a * b; break;
+        case '/': result = a / b; break;
+        case '%': result = a % b; break;
+      }
+      showAlert(result);
+      console.log(result);
+    };
+
+    setInterval(function() {
+      alert('Please, use me...');
+    }, 30000);
+  </script>
+</body>
+</html>

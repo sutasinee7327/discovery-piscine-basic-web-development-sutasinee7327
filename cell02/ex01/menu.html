@@ -1,98 +1,25 @@
-/* General Body Styling */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-}
-
-/* Navigation Bar Container */
-.sncf-nav {
-    background: linear-gradient(90deg, #501955, #3d1240); /* SNCF purple gradient */
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    padding: 0 15px;
-    display: inline-block;
-}
-
-/* Main Menu List */
-.sncf-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-/* Menu Items */
-.sncf-menu li {
-    position: relative; /* Essential for positioning the dropdown */
-}
-
-/* Menu Links */
-.sncf-menu li a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-    padding: 20px 25px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Hover effect for main menu links */
-.sncf-menu li:hover > a {
-    background-color: #f34970; /* SNCF pink/raspberry color */
-    color: #fff;
-}
-
-/* The "SNCF Sandwich" Drop-down Menu */
-.dropdown {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 100%; /* Position it right below the parent item */
-    left: 0;
-    background-color: #ffffff;
-    border-radius: 0 0 8px 8px; /* Rounded corners for the bottom */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    min-width: 220px;
-    
-    /* --- CSS Magic: Hide the dropdown by default --- */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-}
-
-/* --- CSS Magic: Show dropdown on parent hover --- */
-.sncf-menu li:hover > .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Dropdown Links */
-.dropdown li a {
-    padding: 15px 20px;
-    color: #333; /* Dark text for readability on white background */
-    font-weight: normal;
-}
-
-/* Hover effect for dropdown links */
-.dropdown li:hover a {
-    background-color: #f4f4f9; /* Light grey for hover */
-    color: #f34970; /* Use the brand pink for text color */
-}
-
-/* Add a subtle separator for the last item */
-.dropdown li:last-child a {
-    border-top: 1px solid #eee;
-}
-
-.dropdown li:last-child:hover a {
-     border-top-color: #f4f4f9;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SNCF Sandwich Menu</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <nav class="sncf-menu">
+    <ul>
+      <li class="menu-main">
+        <span>🥪 SNCF Sandwich</span>
+        <ul class="dropdown">
+          <li><a href="#">Ham</a></li>
+          <li><a href="#">Cheese</a></li>
+          <li><a href="#">Butter</a></li>
+          <li><a href="#">Baguette</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Drinks</a></li>
+      <li><a href="#">Desserts</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
